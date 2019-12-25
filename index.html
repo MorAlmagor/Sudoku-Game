@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>soduku game online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="level">
+            
+            <button class="user" onclick="board_reset()" title=" Reset board">&#x267B;</button>
+            <button class="user" onclick="userdiff ()" title=" Custom difficult ">&#x270D;</button>
+            <button class="user" onclick="clue()" title=" Need help ? ">&#x261D;</button>
+            <button class="user"  onclick="level(20)" class="user" title="Easy difficult" >&#x2680;</button>
+            <button class="user"  onclick="level(40)" class="user" title="Medium difficult" >&#x2680;</button>
+            <button class="user"  onclick="level(60)" class="user" title="Hard difficult"  >&#x2685;</button>
+           
+        </div>
+        <img id="logo1" src="image/logo.png" alt="">
+        <div onclick="reg()" id="log-in" ><p>&#9776;</p></div>
+        <button id="check" class="user" onclick="check()" title="Check!" >&#x2714;</button>
+        <button id="new" class="user" onclick="newboard ()" title="New board" >&#x274F;</button>
+        <div id="containerTable">
+            <div class="bigBlock" id="cb1">
+                <!-- this is block 1 -->
+                <div class="block" id="b1"><input type="text" id="00" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b2"><input type="text" id="01" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b3"><input type="text" id="02" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b10"><input type="text" id="10" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b11"><input type="text" id="11" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b12"><input type="text" id="12" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b19"><input type="text" id="20" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b20"><input type="text" id="21" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b21"><input type="text" id="22" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb2">
+                <!-- this is block 2 -->
+                <div class="block" id="b4"><input type="text" id="03" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b5"><input type="text" id="04" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b6"><input type="text" id="05" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b13"><input type="text" id="13" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b14"><input type="text" id="14" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b15"><input type="text" id="15" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b22"><input type="text" id="23" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b23"><input type="text" id="24" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b24"><input type="text" id="25" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb3">
+                <!-- this is block 3 -->
+                <div class="block" id="b7"><input type="text" id="06" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b8"><input type="text" id="07" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b9"><input type="text" id="08" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b16"><input type="text" id="16" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b17"><input type="text" id="17" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b18"><input type="text" id="18" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b25"><input type="text" id="26" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b26"><input type="text" id="27" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b27"><input type="text" id="28" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb4">
+                <!-- this is block 4 -->
+                <div class="block" id="b28"><input type="text" id="30" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b29"><input type="text" id="31" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b30"><input type="text" id="32" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b37"><input type="text" id="40" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b38"><input type="text" id="41" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b39"><input type="text" id="42" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b46"><input type="text" id="50" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b47"><input type="text" id="51" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b48"><input type="text" id="52" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb5">
+                <!-- this is block 5 -->
+                <div class="block" id="b31"><input type="text" id="33" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b32"><input type="text" id="34" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b33"><input type="text" id="35" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b40"><input type="text" id="43" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b41"><input type="text" id="44" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b42"><input type="text" id="45" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b50"><input type="text" id="53" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b51"><input type="text" id="54" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b52"><input type="text" id="55" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb6">
+                <!-- this is block 6 -->
+                <div class="block" id="b34"><input type="text" id="36" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b35"><input type="text" id="37" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b36"><input type="text" id="38" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b43"><input type="text" id="46" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b44"><input type="text" id="47" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b45"><input type="text" id="48" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b53"><input type="text" id="56" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b54"><input type="text" id="57" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b55"><input type="text" id="58" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb7">
+                <!-- this is block 7 -->
+                <div class="block" id="b56"><input type="text" id="60" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b57"><input type="text" id="61" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b58"><input type="text" id="62" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b65"><input type="text" id="70" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b66"><input type="text" id="71" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b67"><input type="text" id="72" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b74"><input type="text" id="80" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b75"><input type="text" id="81" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b76"><input type="text" id="82" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb8">
+                <!-- this is block 8 -->
+                <div class="block" id="b59"><input type="text" id="63" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b60"><input type="text" id="64" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b61"><input type="text" id="65" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b68"><input type="text" id="73" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b69"><input type="text" id="74" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b70"><input type="text" id="75" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b77"><input type="text" id="83" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b78"><input type="text" id="84" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b79"><input type="text" id="85" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+            <div class="bigBlock" id="cb9">
+                <!--  this is block 9 -->
+                <div class="block" id="b62"><input type="text" id="66" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b63"><input type="text" id="67" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b64"><input type="text" id="68" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b71"><input type="text" id="76" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b72"><input type="text" id="77" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b73"><input type="text" id="78" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b80"><input type="text" id="86" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b81"><input type="text" id="87" onkeyup="doKeyUpValidation(this)"></div>
+                <div class="block" id="b82"><input type="text" id="88" onkeyup="doKeyUpValidation(this)"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reg">
+        <div id="window">
+          <h1>register</h1>  
+          <input id="userNameValid" type="text" placeholder="User-name">
+          <input id="passWordValid" type="password" placeholder="Password">
+          <button onclick="enterVaild()" class="enter-game" >Enter</button> 
+          <button onclick="hell()" class="enter-game" >guest</button>
+          <button onclick="page()" id="enter_form_page" >* New user? Click here *</button>
+        </div>
+    </div>
+
+    <div id="form">
+        <div id="form_window" >
+            <h1>New user</h1>
+            <input id="namee" class="forms" type="text" placeholder="First name">
+            <input id="lastName" class="forms" type="text" placeholder="Last name">
+            <input id="pass" class="forms" type="text" placeholder="Password">
+            <input id="passVaild" class="forms" type="password" placeholder="vaild Password">
+            <input id="phone" class="forms" type="number" placeholder="phone">
+            <input id="id" class="forms" type="number" placeholder="id">
+            <form class="forms" >
+                <select id="gender">
+                <option >Gender</option>
+                <option >Male</option>
+                <option >Female</option>
+                <option >Other...</option>
+                </select>
+            </form>
+            <form class="forms" >
+                <select id="country">
+                <option >Country</option>
+                <option >Israel</option>
+                <option >USA</option>
+                <option >Another...</option>
+                </select>
+            </form>
+
+            
+            <button onclick="vaild()" class="enter-game" >Sign-me in</button>
+            <button onclick="reg()" class="enter-game" >Go back</button>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+
+
+
+
+</body>
+
+</html>
